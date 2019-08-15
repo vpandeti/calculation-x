@@ -1,8 +1,8 @@
 # calculation-x
-UI and APIs for a user to calculate longest path in a binary tree
+UI and APIs for a user to calculate longest path in a binary tree.
 
 
-##Tech stack
+## Tech stack
 API
 * Spring Boot
 * H2 DB
