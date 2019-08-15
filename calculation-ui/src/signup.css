@@ -1,0 +1,73 @@
+.signup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  height: 100vh;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.signup-block{
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  padding: 70px;
+}
+
+.signup-center-content{
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+}
+
+.signup-company-name{
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  margin-bottom: 30px;
+}
+
+.signup-input{
+  color: black;
+  font-size: medium;
+  padding: 15px;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.sign-up-button{
+  border: 1px solid #189ad3;
+  background-color: #1ebbd7;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: large;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.sign-up-button:hover{
+  background-color: #71C7EC;
+}
+
+.sign-up-sign-in{
+  color: #0080FF;
+  cursor: pointer;
+  font-size: small;
+  text-align: right;
+}
+
+.sign-up-error {
+  color: rgb(145, 39, 39);
+  text-align: center;
+  margin-top: 5px;
+}

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  calculation-service:
+    container_name: calculation-service
+    image: vpandeti/calculationservice:1.0.0
+    ports:
+      - 3001:30001
+  calculation-ui:
+    container_name: calculation-ui
+    image: vpandeti/calculation-ui:1.0.0
+    ports:
+      - 3000:80

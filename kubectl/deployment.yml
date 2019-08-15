@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculation-ui
+  labels:
+    app: calculation-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculation-ui
+  template:
+    metadata:
+      labels:
+        app: calculation-ui
+    spec:
+      containers:
+      - name: calculation-ui
+        image: vpandeti/calculation-ui:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 2
+          failureThreshold: 1
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculation-api
+  labels:
+    app: calculation-api
+spec:
+  replicas: null
+  selector:
+    matchLabels:
+      app: calculation-api
+  template:
+    metadata:
+      labels:
+        app: calculation-api
+    spec:
+      containers:
+      - name: calculation-api
+        image: vpandeti/calculationservice:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 30001
+        readinessProbe:
+          httpGet:
+            path: /health/check
+            port: 30001
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 2
+          failureThreshold: 1
+
